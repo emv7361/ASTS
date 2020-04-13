@@ -1,9 +1,8 @@
-using namespace std;
 #include <stdio.h>
 #include <string.h> 
 #include <stdint.h>
 #include <stdlib.h>
-#include <cstdlib>
+
 
 int main(int argc, char** argv) {
 
@@ -12,6 +11,7 @@ int main(int argc, char** argv) {
 	typedef char* string;
 	char text[128];
 	char gamma[128];
+        char gamm2[128];
 	char res[128];
 	printf("input your text");
 	scanf("%s", text);
@@ -20,12 +20,16 @@ int main(int argc, char** argv) {
 	
 	int sizetext = strlen(text);
 	int sizegam = strlen(gamma);
-	
+	for (int i = 0; i < 128; i++)
+        {
+          gamm2[i]=gamma[i];
+        }
+        
 	if (sizegam<sizetext)
 	{
 		while (sizegam < sizetext)
 		{
-			strcat(gamma, gamma);
+			strcat(gamma, gamm2);
 			sizegam = strlen(gamma);
 		}
 	}
